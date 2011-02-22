@@ -105,7 +105,7 @@
                                      $("#bi_size").css( "color", "000000" );
                                      //put value into hidden form
                                      //$("#bi_field").text( "size" );
-                                     get_ref("bi_field").value = "size";                                     
+                                     get_ref("bi_field").value = "filesize";
                                      //unhighlight
                                      unhighlight( last_fld, 1 );
                                    }

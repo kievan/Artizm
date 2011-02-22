@@ -1,4 +1,5 @@
 <?php
+        error_reporting(E_ERROR);
         session_start();
         
         require_once( "../shared/php/encrypt.php" );
@@ -58,7 +59,7 @@
                 
                 while ( $row = @mysql_fetch_array( $result ) )
                 {
-                    if( $row[ "username" ] == $this->username && $row[ "password" ] == $p )
+                    if( $row[ "username" ] == $this->username && strncmp($row[ "password" ], $p, 25)==0 )
                         return ($status = true);
                     else
                         $status = false;

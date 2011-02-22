@@ -79,8 +79,8 @@
            </div>
 	   
 	   <form id="bi_form" style="display:none;">
-		<input type="text" id="bi_field" name="bi_field" />
-		<input type="text" id="bi_order" name="bi_order" />
+		<input type="text" id="bi_field" name="bi_field" value=""/>
+		<input type="text" id="bi_order" name="bi_order" value=""/>
 	   </form>
 	    <!--Loading indicator-->
         <div id="loading_bar" style="float:left; position:relative; top:120px; left:-170px;">

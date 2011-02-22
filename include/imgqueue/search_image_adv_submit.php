@@ -1,4 +1,5 @@
 <?php
+        error_reporting(E_ERROR);
         session_start();
         
         require_once( "search_image.php" );

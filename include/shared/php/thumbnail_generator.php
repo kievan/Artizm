@@ -68,7 +68,7 @@ function createthumb( $name, $filename, $new_w, $new_h, $mime_type, $old_x, $old
 		else
 			$src_img = imagecreatefrompng( $name );
 	}
-	if ( $mime_type == "jpg" || $mime_type == "jpeg" )
+	if ( $mime_type == "jpg" || $mime_type == "jpeg")
 	{
 		if( !imagecreatefromjpeg( $name ) )
 			return "<b>imagecreatefromjpeg_false</b>";

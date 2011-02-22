@@ -16,6 +16,6 @@
     
     $oLogout = new Logout();
     
-    print "<meta HTTP-EQUIV=\"REFRESH\" content=\"3; url=./../../index.php\">";
+    print "<meta HTTP-EQUIV=\"REFRESH\" content=\"1; url=./../../index.php\">";
     print "</html>";
 ?>

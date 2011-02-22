@@ -2,13 +2,18 @@
 @session_start();
 require_once( "./include/shared/php/globals.php" );
 
+//if( !isset($_SESSION[ "username" ]))
+//    $username = "";
+//else
+//    $username = $_SESSION[ "username" ];
+
     $logout_call  = "<script type=\"text/javascript\" src=\"./include/shared/js/logout.js\"></script>";
-	$mem_srch_lnk = "<a href=\"mem-search.php\">Members</a> |";
-	$upload_lnk   = "<a href=\"img-upload.php\">Upload </a> |";
-	// $user_status  = "<span style=\"font-weight: bold; color: #585858;\">".
-				// "Welcome " . $_SESSION[ "username" ].
-				// "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".
-				// "<a href='./include/useraccs/logout.php'>Log out</a></span>";
+    $mem_srch_lnk = "<a href=\"mem-search.php\">Members</a> |";
+    $upload_lnk   = "<a href=\"img-upload.php\">Upload </a> |";
+//    $user_status  = "<span style=\"font-weight: bold; color: #585858;\">".
+//                             "Welcome " . $username.
+//                             "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".
+//                             "<a href='./include/useraccs/logout.php'>Log out</a></span>";
 	
         function print_header()
         {
@@ -35,7 +40,7 @@ HEADER;
 	    
 	    print <<<HEADER
 		<div class="middle_window_text" align="center">
-		<span style="color:#0099FF; font-weight:bolder;">WELCOME $user_status</span> | <a href="img-upload.php">UPLOAD ART</a> | <a href="#"> MANAGE ARTS</a> | <a href="include/useraccs/logout.php"> LOGOUT</a>
+		<span style="color:#000000;">Logged in as <b>$user_status</b></span> | <a href="img-upload.php">UPLOAD ART</a> | <a href="#"> MANAGE ARTS</a> | <a href="include/useraccs/logout.php"> LOGOUT</a>
 		</div>
 HEADER;
 	    }

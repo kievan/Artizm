@@ -1,7 +1,7 @@
 <?php
         session_start();
         
-        require_once( "login.php" );
+        require_once( "./login.php" );
         require_once( "../shared/php/globals.php" );
 
         $u = $_POST[ "l_username" ];
@@ -14,6 +14,7 @@
         {
            print "Welcome $u!";
            $_SESSION[ "username" ] = $u;
+
         }
         else
            print "Please try again.";

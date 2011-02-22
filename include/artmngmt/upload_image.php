@@ -128,7 +128,8 @@
                 
                 $filesize_status = $this->check_filesize( $this->filesize ); 
                 
-                if(  $name_status     == true &&
+                if(
+                     $name_status     == true &&
                      $artist_status   == true &&
                      $era_status      == true &&
                      $style_status    == true &&

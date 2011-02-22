@@ -20,19 +20,29 @@
                                      );
     
             $db_conn = new ArtizmDB( "mysql" );
-            $db_conn->db_open( $glob[1], $glob[2], $glob[3], $glob[4] );
+            //$db_conn->db_open( $glob[1], $glob[2], $glob[3], $glob[4] );
             $submit = $oRegister->submit();
-    
+
+
+
             if ( $submit == true && $_POST[ "r_user_agreement" ] == 1 )
+//            if ( true )
             {
                 $u        = $oRegister->get_username();
                 $p        = $oRegister->get_desired_password();
-                $p_hashed = double_salt( $p, $u ); 
+                $p_hashed = double_salt( $p, $u );
                 $e        = $oRegister->get_email();
+
+//                $u        = "test123";
+//                $p        = "test123";
+//                $p_hashed = double_salt( $p, $u );
+//                $e        = "tt@tt.com";
                 
                 //Add user to ArtizmDB
-                $result = $db_conn->db_query( $glob[8] . " (\"" . $u ."\",\"". $p_hashed ."\",\"" . $e ."\")" );
-                
+                //$result = $db_conn->db_query( $glob[8] . " (\"" . $u ."\",\"". $p_hashed ."\",\"" . $e ."\")" );
+                $query_str = $glob[8] . " (\"" . $u ."\",\"". $p_hashed ."\",\"" . $e ."\")";
+                $db_platf = "mysql";
+                $result = $db_conn->db_exec($glob[1], $glob[2], $glob[3], $glob[4], $query_str, $db_platf);
                 print $oRegister->response . "You are now registered! Please check your email.";
                 $db_conn->db_close();
             }

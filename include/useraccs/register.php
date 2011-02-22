@@ -1,5 +1,6 @@
 <?php
 		error_reporting(E_ERROR); 
+		//error_reporting(E_ALL);
         session_start();
         
         require_once( "../shared/php/db_abstraction.php" );
@@ -132,7 +133,7 @@
                 $conn       = $oResult->db_open( $this->glob[1], $this->glob[2], $this->glob[3], $this->glob[4] );
                 $result     = $oResult->db_query( $this->glob[6] );
                 
-                while ( $row = @mysql_fetch_array( $result ) )
+                while ( $row = mysql_fetch_array( $result ) )
                 {
                     if( $row[ "username" ] == $this->username )
                     {

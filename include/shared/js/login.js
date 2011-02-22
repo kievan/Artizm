@@ -53,12 +53,12 @@ function login_submit( submit_status )
     
     var log = submit_status.substr( 1, 1 );
    
-    if( log == "e" )
-    {
-        setTimeout( 'window.location = "./index.php"', 20 );
-    }
-    else
-    {
+//    if( log == "e" )
+//    {
+//        setTimeout( 'window.location = "./index.php"', 20 );
+//    }
+//    else
+//    {
         var win_width   = window.innerWidth;
         var status_box_w = 450;
             
@@ -66,7 +66,9 @@ function login_submit( submit_status )
         
         get_ref( "l_submit_status" ).style.display = "block";
         $("#l_submit_status").html( submit_status );
-    }
+
+        setTimeout( 'window.location = "./index.php"', 100 );
+//    }
     
     return false;
 }

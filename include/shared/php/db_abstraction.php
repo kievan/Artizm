@@ -10,7 +10,7 @@
             private $result;    // query result
             private $db_platf;  // DB platform
             
-            function ArtizmDB( $db_platf )
+            function __construct( $db_platf )
             {
                 $this->conn     = "Default connection id.";
                 $this->result   = "Default database result.";
@@ -32,7 +32,7 @@
             {
                 if( $this->db_platf == "mysql" )
                 {
-                    $this->conn = @mysql_connect( $server, $username, $password )
+                    $this->conn = mysql_connect( $server, $username, $password )
                             or die( "Unable to connect to server." );
                     
                     if ( $DB == "" )
@@ -58,12 +58,12 @@
             
             function db_query( $query_str )
             {
-                $conn = $this->conn;                        
-                if( $this->db_platf == "mysql" )
-                    $this->result = @mysql_query( $query_str, $this->conn );
-                else if( $this->db_platf == "mssql" )
-                    $this->result = @mssql_query( $query_str, $this->conn );
-                
+                //$conn = $this->conn;
+                if( strcmp($this->db_platf, "mysql") == 0 )
+                    $this->result = mysql_query( $query_str, $this->conn );
+                else if( strcmp($this->db_platf, "mssql") == 0 )
+                    $this->result = mssql_query( $query_str, $this->conn );
+               
                 return $this->result;
             }        
     
@@ -78,7 +78,7 @@
             function db_close()
             {
                 if( $this->db_platf == "mysql" )
-                    @mysql_close();//$this->conn); //
+                    mysql_close($this->conn); //
                 else if( $this->db_platf == "mssql" )    
                     @mssql_close( $this->conn );
             }

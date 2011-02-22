@@ -27,9 +27,9 @@
          * MySQL connection settings.
          */
         1    => "localhost",           // server
-        2    => "itechbri_artizad",    // username 
-        3    => "<hard2_&_4get>",      // password
-        4    => "itechbri_artizmDB",   // database
+        2    => "artizmAdmin",    // username
+        3    => "hard24get",      // password
+        4    => "artizmdb",   // database
         
         5    => "|=|", // image separator
         10   => "__pg_separ__",

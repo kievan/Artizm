@@ -22,6 +22,6 @@
                  * Execute a chosen way to logout.
                  * Log out after 888888/6000 = 14.8148 minutes.
                  */
-                setTimeout( param, 888888 ); 
+                setTimeout( param, 88888 ); 
             };
 
